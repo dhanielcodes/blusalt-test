@@ -17,9 +17,7 @@ export default function NavItem({
       >
         <div className="flex items-center gap-2">
           {icon}
-          <div className="text-black font-light text-base font-[family-name:var(--font-plex-sans)]">
-            {name}
-          </div>
+          <div className="text-black font-light text-base ibm_font">{name}</div>
         </div>
       </div>
     </>

@@ -12,10 +12,22 @@ export default function Dashboard() {
     <DashboardLayout>
       <div className="grid gap-4">
         <div className="grid grid-cols-4 gap-4">
-          <Card />
-          <Card bgColor="bg-[#E5ECF6]" />
-          <Card />
-          <Card bgColor="bg-[#E5ECF6]" />
+          <Card count={7265} title="Requests" spike="up" spikePercentage={20} />
+          <Card
+            count={3671}
+            title="KYC"
+            bgColor="bg-[#E5ECF6]"
+            spike="down"
+            spikePercentage={-10}
+          />
+          <Card count={156} title="Tasks" spike="up" spikePercentage={36} />
+          <Card
+            count={2318}
+            title="Customers"
+            bgColor="bg-[#E5ECF6]"
+            spike="down"
+            spikePercentage={-4}
+          />
         </div>
         <div className="grid grid-cols-4 gap-4">
           <div className="col-span-3">

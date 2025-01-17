@@ -14,6 +14,7 @@ export function ReportsGeneratedChart() {
         show: false,
       },
     },
+    colors: ["#95A4FC", "#BAEDBD", "#1C1C1C", "#B1E3FF", "#A8C5DA", "#A1E3CB"],
     plotOptions: {
       bar: {
         columnWidth: "50%",
@@ -43,7 +44,6 @@ export function ReportsGeneratedChart() {
     dataLabels: {
       enabled: false,
     },
-    colors: ["#95A4FC", "#BAEDBD", "#1C1C1C", "#B1E3FF", "#A8C5DA", "#A1E3CB"],
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
       axisBorder: {

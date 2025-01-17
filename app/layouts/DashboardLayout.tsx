@@ -22,7 +22,7 @@ export default function DashboardLayout({
 }>) {
   return (
     <div
-      className={`${inter.variable} ${plex.variable} max-w-[1500px] mx-auto grid grid-cols-12 antialiased font-[family-name:var(--font-inter)]`}
+      className={`${inter.variable} ${plex.variable} max-w-[1500px] mx-auto grid grid-cols-12 antialiased inter_font`}
     >
       <div className="col-span-2">
         <Navbar />

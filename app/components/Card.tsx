@@ -1,6 +1,21 @@
 import React from "react";
+import SpikeUp from "@/app/icons/bitIcons/SpikeUp";
+import SpikeDown from "@/app/icons/bitIcons/SpikeDown";
+import { CFormatter } from "@/lib/utils";
 
-function Card({ bgColor }: { bgColor?: string }) {
+function Card({
+  title,
+  count,
+  bgColor,
+  spike,
+  spikePercentage,
+}: {
+  title: string;
+  count: number;
+  bgColor?: string;
+  spike: string;
+  spikePercentage: number;
+}) {
   return (
     <div
       className={`${
@@ -8,8 +23,14 @@ function Card({ bgColor }: { bgColor?: string }) {
       } rounded-[20px] p-5`}
     >
       <div>
-        <div className="text-[12px]">Requests</div>
-        <div className="text-[18px] font-medium mt-4">7,800</div>
+        <div className="text-[12px]">{title}</div>
+        <div className="flex justify-between items-center mt-4">
+          <div className="text-[20px] font-medium">{CFormatter(count)}</div>
+          <div className="flex gap-1 items-center">
+            <div className="text-[12px]">{spikePercentage}%</div>
+            {spike === "up" ? <SpikeUp /> : <SpikeDown />}
+          </div>
+        </div>
       </div>
     </div>
   );
