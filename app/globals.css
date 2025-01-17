@@ -76,3 +76,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+.inter_font {
+  @apply font-[family-name:var(--font-inter)]
+}
+
+.ibm_font {
+  @apply font-[family-name:var(--font-plex-sans)]
+}
+
+::-webkit-scrollbar{
+  width: 0;
+}
