@@ -21,12 +21,12 @@ const lato = Lato({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <body
+    <div
       className={`${inter.variable} ${plex.variable} ${lato.variable} overflow-hidden`}
     >
       <DashboardProvider>
         <Component {...pageProps} />;
       </DashboardProvider>
-    </body>
+    </div>
   );
 }

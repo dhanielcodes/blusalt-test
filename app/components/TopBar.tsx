@@ -12,14 +12,10 @@ function TopBar() {
   }
   const { toggleNavState }: ContextType = context;
 
-  const [data, setData] = useState("New Data");
-
   return (
     <div className="p-6 flex justify-between items-center border-b border-[#F0ECEC] h-[9vh]">
       <div className="flex justify-between items-center w-full">
         <div className="font-ibm-plex-sans font-medium text-2xl">Dashboard</div>
-
-        {data}
         <div className="flex gap-6 items-center">
           <SearchInput />
           <Sun size={18} />
@@ -28,8 +24,6 @@ function TopBar() {
 
           <Sidebar
             onClick={() => {
-              setData("Changed Data");
-              console.log(data);
               toggleNavState && toggleNavState();
             }}
             size={18}
