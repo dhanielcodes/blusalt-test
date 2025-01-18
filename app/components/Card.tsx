@@ -25,7 +25,9 @@ function Card({
       <div>
         <div className="text-[12px]">{title}</div>
         <div className="flex justify-between items-center mt-4">
-          <div className="text-[20px] font-medium">{CFormatter(count)}</div>
+          <div className="text-[20px] ibm_font font-medium">
+            {CFormatter(count)}
+          </div>
           <div className="flex gap-1 items-center">
             <div className="text-[12px]">{spikePercentage}%</div>
             {spike === "up" ? <SpikeUp /> : <SpikeDown />}

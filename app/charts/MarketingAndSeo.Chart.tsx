@@ -3,13 +3,13 @@
 import { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
 import CharTitle from "@/app/components/CharTitle";
+import { KFormatter } from "@/lib/utils";
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export function MarketingAndSeoChart() {
   const option: ApexOptions = {
     chart: {
       type: "bar",
-
       toolbar: {
         show: false,
       },
@@ -18,13 +18,17 @@ export function MarketingAndSeoChart() {
       bar: {
         columnWidth: "50%",
         borderRadius: 8,
+        distributed: true,
       },
     },
     yaxis: {
       min: 0,
-      max: 400,
+      max: 40000,
       tickAmount: 3,
       labels: {
+        formatter: function (value: any) {
+          return KFormatter(value).toString();
+        },
         style: {
           colors: "#1C1C1C66",
           fontSize: "12px",
@@ -80,8 +84,11 @@ export function MarketingAndSeoChart() {
 
   const series = [
     {
-      name: "Users",
-      data: [100, 200, 300, 200, 300, 100, 300, 200, 100, 300, 200, 100],
+      name: "Month",
+      data: [
+        10000, 20000, 30000, 20000, 30000, 10000, 30000, 20000, 10000, 30000,
+        20000, 10000,
+      ],
     },
   ];
 

@@ -22,3 +22,15 @@ export const getPercentage = (part: number, total: number) => {
   if (total === 0) return 0; // Avoid division by zero
   return (part / total) * 100;
 };
+
+export const sumUp = (array: Array<number>) => {
+  if (array?.length) {
+    return array?.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+  } else {
+    return [0, 0, 0]?.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+    }, 0);
+  }
+};

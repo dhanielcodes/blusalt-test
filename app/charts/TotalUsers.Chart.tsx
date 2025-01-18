@@ -4,6 +4,7 @@ import { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
 import CharTitle from "@/app/components/CharTitle";
 import PinLabel from "@/app/components/bits/PinLabel";
+import { KFormatter } from "@/lib/utils";
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export function TotalUsersChart() {
@@ -16,12 +17,18 @@ export function TotalUsersChart() {
       toolbar: {
         show: false,
       },
+      zoom: {
+        enabled: false,
+      },
     },
     yaxis: {
       min: 0,
-      max: 400,
+      max: 40000,
       tickAmount: 3,
       labels: {
+        formatter: function (value: any) {
+          return KFormatter(value).toString();
+        },
         style: {
           colors: "#1C1C1C66",
           fontSize: "12px",
@@ -83,11 +90,11 @@ export function TotalUsersChart() {
   const series = [
     {
       name: "Previous Week",
-      data: [100, 200, 300, 200, 100, 200, 200],
+      data: [10000, 20000, 30000, 20000, 10000, 20000, 20000],
     },
     {
       name: "Current Week",
-      data: [200, 100, 200, 300, 200, 300, 100],
+      data: [20000, 10000, 20000, 30000, 20000, 30000, 10000],
     },
   ];
 

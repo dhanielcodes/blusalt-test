@@ -15,7 +15,7 @@ export function TrafficByLocationChart() {
       {
         data: [50, 20, 15, 10],
         backgroundColor: ["#1C1C1C", "#B1E3FF", "#A1E3CB", "#A8C5DA"], // Segment colors
-
+        borderRadius: 6,
         borderWidth: 2, // Border width
       },
     ],
