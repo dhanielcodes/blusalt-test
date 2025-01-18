@@ -82,7 +82,7 @@
   padding: 10px;
 }
 &::-webkit-scrollbar-thumb {
-  width: 10px;
+  width: 0px;
   background-color: #019edf;
   border-radius: 30px;
 }

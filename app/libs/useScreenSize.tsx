@@ -2,12 +2,11 @@ import { useState, useEffect } from "react";
 
 function useScreenSize() {
   const [screenSize, setScreenSize] = useState({
-    width: 0, // Default value for SSR
-    height: 0, // Default value for SSR
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
-    // Access `window` only in the client
     const handleResize = () => {
       setScreenSize({
         width: window.innerWidth,
@@ -15,10 +14,8 @@ function useScreenSize() {
       });
     };
 
-    // Set initial screen size
     handleResize();
 
-    // Listen for resize events
     window.addEventListener("resize", handleResize);
 
     return () => {

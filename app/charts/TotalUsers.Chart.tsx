@@ -6,6 +6,7 @@ import CharTitle from "@/app/components/CharTitle";
 import PinLabel from "@/app/components/bits/PinLabel";
 import { KFormatter } from "@/lib/utils";
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import useScreenSize from "@/app/libs/useScreenSize";
 
 export function TotalUsersChart() {
   const option: ApexOptions = {
@@ -97,9 +98,15 @@ export function TotalUsersChart() {
       data: [20000, 10000, 20000, 30000, 20000, 30000, 10000],
     },
   ];
+  const { width } = useScreenSize();
 
   return (
-    <div className="bg-[#F7F9FB] rounded-[20px] pb-2 pt-4 pr-4 pl-3">
+    <div
+      style={{
+        width: width < 1024 ? (width * 2) / 2.8 : "100%",
+      }}
+      className="bg-[#F7F9FB] rounded-[20px] pb-2 pt-4 pr-4 pl-3"
+    >
       <div className="pt-3 pl-3 flex items-center space-x-4">
         <div className="flex gap-4">
           <CharTitle title="Total Users" />

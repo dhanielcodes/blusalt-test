@@ -6,12 +6,21 @@ import { TrafficByWebsiteChart } from "@/app/charts/TrafficByWebsite.Chart";
 import Card from "@/app/components/Card";
 import DashboardLayout from "@/app/layouts/DashboardLayout";
 import Image from "next/image";
+import useScreenSize from "@/app/libs/useScreenSize";
 
 export default function Dashboard() {
+  const { width } = useScreenSize();
+  const sWidth = (width * 2) / 2.8;
+
   return (
     <DashboardLayout>
       <div className="grid gap-4 w-full">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4  w-full">
+        <div
+          style={{
+            width: width < 1024 ? sWidth + "px" : "100%",
+          }}
+          className="grid lg2:grid-cols-4 lg:grid-cols-2 gap-4  w-full"
+        >
           <Card count={7265} title="Requests" spike="up" spikePercentage={20} />
           <Card
             count={3671}
@@ -29,15 +38,15 @@ export default function Dashboard() {
             spikePercentage={-4}
           />
         </div>
-        <div className="grid lg:grid-cols-4 gap-4  w-full">
+        <div className="grid lg2:grid-cols-4 gap-4 w-full">
           <div className="col-span-3 w-full">
             <TotalUsersChart />
           </div>
-          <div className="col-span-1 w-full">
+          <div className="lg2:col-span-1 col-span-3 w-full">
             <TrafficByWebsiteChart />
           </div>
         </div>
-        <div className="grid lg:grid-cols-4 gap-4 w-full">
+        <div className="grid lg2:grid-cols-4 gap-4 w-full">
           <div className="col-span-2  w-full">
             <ReportsGeneratedChart />
           </div>

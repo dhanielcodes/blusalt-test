@@ -4,6 +4,7 @@ import { ApexOptions } from "apexcharts";
 import dynamic from "next/dynamic";
 import CharTitle from "@/app/components/CharTitle";
 import { KFormatter } from "@/lib/utils";
+import useScreenSize from "@/app/libs/useScreenSize";
 
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
@@ -77,8 +78,15 @@ export function ReportsGeneratedChart() {
     },
   ];
 
+  const { width } = useScreenSize();
+
   return (
-    <div className="bg-[#F7F9FB] rounded-[20px] pb-1 pt-3 pr-3 pl-2">
+    <div
+      style={{
+        width: width < 1024 ? (width * 2) / 2.8 : "100%",
+      }}
+      className="bg-[#F7F9FB] rounded-[20px] pb-1 pt-3 pr-3 pl-2"
+    >
       <div className="pt-3 pl-3">
         <CharTitle title="Reports Generated" />
       </div>
@@ -86,7 +94,7 @@ export function ReportsGeneratedChart() {
         options={option}
         type="bar"
         series={series}
-        width="100%"
+        width={"100%"}
         height="220"
       />
     </div>

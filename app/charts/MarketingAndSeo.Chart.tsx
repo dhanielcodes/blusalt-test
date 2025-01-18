@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import CharTitle from "@/app/components/CharTitle";
 import { KFormatter } from "@/lib/utils";
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import useScreenSize from "@/app/libs/useScreenSize";
 
 export function MarketingAndSeoChart() {
   const option: ApexOptions = {
@@ -96,9 +97,15 @@ export function MarketingAndSeoChart() {
       ],
     },
   ];
+  const { width } = useScreenSize();
 
   return (
-    <div className="bg-[#F7F9FB]  w-full rounded-[20px] pb-1 pt-3 pr-3 pl-2">
+    <div
+      style={{
+        width: width < 1024 ? (width * 2) / 2.8 : "100%",
+      }}
+      className="bg-[#F7F9FB]  w-full rounded-[20px] pb-1 pt-3 pr-3 pl-2"
+    >
       <div className="pt-3 pl-3">
         <CharTitle title="Marketing & SEO" />
       </div>
@@ -106,7 +113,7 @@ export function MarketingAndSeoChart() {
         options={option}
         type="bar"
         series={series}
-        width="100%"
+        width={"100%"}
         height="220"
       />
     </div>

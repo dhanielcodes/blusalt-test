@@ -8,6 +8,15 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "360px", // Custom small screens
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      lg2: "1280px",
+      xl: "1280px",
+      xxl: "1920px", // Custom large screen
+    },
     extend: {
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],

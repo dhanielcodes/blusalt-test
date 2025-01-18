@@ -5,6 +5,7 @@ import { ChartOptions } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import PinLabel from "@/app/components/bits/PinLabel";
+import useScreenSize from "@/app/libs/useScreenSize";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -40,10 +41,18 @@ export function TrafficByLocationChart() {
     id: "doughnutLabel",
     afterDatasetsDraw: () => {},
   };
+
+  const { width } = useScreenSize();
+
   return (
-    <div className="bg-[#F7F9FB] rounded-[20px] p-5 h-full">
+    <div
+      style={{
+        width: width < 1024 ? (width * 2) / 2.8 : "100%",
+      }}
+      className="bg-[#F7F9FB] rounded-[20px] p-5 h-full"
+    >
       <CharTitle title="Traffic by Location" />
-      <div className="grid md:grid-cols-2 h-full">
+      <div className="grid md:grid-cols-2 gap-4 h-full">
         <div className="grid place-items-center">
           <Doughnut
             data={data}

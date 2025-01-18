@@ -20,11 +20,16 @@ export default function DashboardLayout({
         width: `${width}px`,
       }}
       className={`max-w-[1440px] mx-auto grid ${
-        navState === "web" ? "grid-cols-[240px_1fr]" : "grid-cols-[100px_1fr]"
+        navState === "web"
+          ? "md:grid-cols-[240px_1fr] grid-cols-[100px_1fr]"
+          : "grid-cols-[100px_1fr]"
       } antialiased font-inter`}
     >
-      <div className="w-full">
+      <div className="w-full hidden md:block">
         {navState === "web" ? <Navbar /> : <NavbarMobile />}
+      </div>
+      <div className="w-full block md:hidden">
+        <NavbarMobile />
       </div>
       <div className="w-full">
         <div>
