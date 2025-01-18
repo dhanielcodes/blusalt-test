@@ -3,20 +3,16 @@ import React from "react";
 interface Props {
   message?: string;
   time?: string;
-  icon?: React.ReactNode;
+  Icon?: any;
 }
 
-function NotificationSlip({
-  message = "You fixed a bug",
-  time = "Just now",
-  icon,
-}: Props) {
+function NotificationSlip({ message = "You fixed a bug", time, Icon }: Props) {
   return (
     <div className="flex gap-2 mb-8">
-      {icon}{" "}
+      {Icon}{" "}
       <div>
         <div className="text-sm text-[#1C1C1C]">{message}</div>
-        <div className="text-xs text-[#1C1C1C66]">{time}</div>
+        {time && <div className="text-xs text-[#1C1C1C66]">{time}</div>}
       </div>
     </div>
   );

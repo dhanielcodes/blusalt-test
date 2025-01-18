@@ -47,6 +47,11 @@ export function ReportsGeneratedChart() {
       fontSize: "60px",
       fontFamily: `Inter', sans-serif`,
     },
+    states: {
+      hover: {
+        filter: { type: "darken" },
+      },
+    },
     dataLabels: {
       enabled: false,
     },

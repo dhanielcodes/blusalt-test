@@ -5,8 +5,8 @@ function AvatarIcon({ showChainLine = true }: { showChainLine?: boolean }) {
   return (
     <div className="relative">
       <Image
-        width={30}
-        height={30}
+        width={24}
+        height={24}
         alt="av"
         className="object-cover rounded-full"
         src="/icons/AvatarIcon.png"
@@ -16,7 +16,7 @@ function AvatarIcon({ showChainLine = true }: { showChainLine?: boolean }) {
           width="1"
           height="19"
           viewBox="0 0 1 19"
-          className="absolute bottom-[-25px] left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-[-20px] left-1/2 transform -translate-x-1/2"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >

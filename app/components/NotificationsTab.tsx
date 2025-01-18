@@ -2,6 +2,7 @@ import React from "react";
 import NotificationSlip from "@/app/components/bits/NotificationSlip";
 import BugIcon from "@/app/icons/bitIcons/BugIcon";
 import AvatarIcon from "@/app/icons/bitIcons/AvatarIcon";
+import { activities, contacts, notifications } from "../libs/NotificationsData";
 
 function NotificationsTab() {
   return (
@@ -25,24 +26,18 @@ function NotificationsTab() {
 }
 
 const NotificationSection = () => {
-  return [1, 2, 3, 4]?.map(() => {
-    return <NotificationSlip icon={<BugIcon />} />;
+  return notifications?.map((item) => {
+    return <NotificationSlip {...item} />;
   });
 };
 const ActivitySection = () => {
-  return [1, 2, 3, 4, 5]?.map(() => {
-    return <NotificationSlip icon={<AvatarIcon />} />;
+  return activities?.map((item, index: number) => {
+    return <NotificationSlip {...item} />;
   });
 };
 const ContactsSection = () => {
-  return [1, 2, 3, 4, 5]?.map(() => {
-    return (
-      <NotificationSlip
-        time=""
-        message="Adrian"
-        icon={<AvatarIcon showChainLine={false} />}
-      />
-    );
+  return contacts?.map((item) => {
+    return <NotificationSlip {...item} />;
   });
 };
 
