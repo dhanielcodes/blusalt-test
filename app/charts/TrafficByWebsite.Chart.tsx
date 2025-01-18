@@ -15,7 +15,7 @@ export function TrafficByWebsiteChart() {
     "Twitter",
   ];
   return (
-    <div className="bg-[#F7F9FB] rounded-[20px] p-5 h-full">
+    <div className="bg-[#F7F9FB] rounded-[20px] p-5 h-full w-full">
       <CharTitle title="Traffic by Website" />
       <Labels labels={labels} data={[1, 4, 5, 6, 8, 8]} />
     </div>

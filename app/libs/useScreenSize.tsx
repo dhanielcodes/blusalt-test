@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useScreenSize = () => {
+function useScreenSize() {
   const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0, // Default value for SSR
+    height: 0, // Default value for SSR
   });
 
   useEffect(() => {
+    // Access `window` only in the client
     const handleResize = () => {
       setScreenSize({
         width: window.innerWidth,
@@ -14,15 +15,18 @@ const useScreenSize = () => {
       });
     };
 
+    // Set initial screen size
+    handleResize();
+
+    // Listen for resize events
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return screenSize;
-};
+}
 
 export default useScreenSize;

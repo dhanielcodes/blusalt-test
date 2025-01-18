@@ -98,7 +98,7 @@ export function MarketingAndSeoChart() {
   ];
 
   return (
-    <div className="bg-[#F7F9FB] rounded-[20px] pb-1 pt-3 pr-3 pl-2">
+    <div className="bg-[#F7F9FB]  w-full rounded-[20px] pb-1 pt-3 pr-3 pl-2">
       <div className="pt-3 pl-3">
         <CharTitle title="Marketing & SEO" />
       </div>

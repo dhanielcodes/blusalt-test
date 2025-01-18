@@ -10,8 +10,8 @@ import Image from "next/image";
 export default function Dashboard() {
   return (
     <DashboardLayout>
-      <div className="grid gap-4">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+      <div className="grid gap-4 w-full">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4  w-full">
           <Card count={7265} title="Requests" spike="up" spikePercentage={20} />
           <Card
             count={3671}
@@ -29,19 +29,19 @@ export default function Dashboard() {
             spikePercentage={-4}
           />
         </div>
-        <div className="grid lg:grid-cols-4 gap-4">
-          <div className="col-span-3">
+        <div className="grid lg:grid-cols-4 gap-4  w-full">
+          <div className="col-span-3 w-full">
             <TotalUsersChart />
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 w-full">
             <TrafficByWebsiteChart />
           </div>
         </div>
-        <div className="grid lg:grid-cols-4 gap-4">
-          <div className="col-span-2">
+        <div className="grid lg:grid-cols-4 gap-4 w-full">
+          <div className="col-span-2  w-full">
             <ReportsGeneratedChart />
           </div>
-          <div className="col-span-2">
+          <div className="col-span-2 w-full">
             <TrafficByLocationChart />
           </div>
         </div>

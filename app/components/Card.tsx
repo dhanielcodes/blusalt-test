@@ -23,7 +23,7 @@ function Card({
     <div
       className={`${
         bgColor ? `${bgColor}` : "bg-[#E3F5FF]"
-      } rounded-[20px] p-5`}
+      } rounded-[20px] p-5 w-full`}
     >
       <div>
         <div className="text-[12px]">{title}</div>
