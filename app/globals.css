@@ -77,14 +77,12 @@
   }
 }
 
-.inter_font {
-  @apply font-[family-name:var(--font-inter)]
+&::-webkit-scrollbar {
+  width: 0px;
+  padding: 10px;
 }
-
-.ibm_font {
-  @apply font-[family-name:var(--font-plex-sans)]
-}
-
-::-webkit-scrollbar{
-  width: 0;
+&::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #019edf;
+  border-radius: 30px;
 }

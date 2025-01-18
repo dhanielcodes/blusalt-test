@@ -7,7 +7,7 @@ function CharTitle({
   title: string;
   weight?: string;
 }) {
-  return <div className={`inter_font text-[14px] font-${weight}`}>{title}</div>;
+  return <div className={`font-inter text-[14px] font-${weight}`}>{title}</div>;
 }
 
 CharTitle.propTypes = {};

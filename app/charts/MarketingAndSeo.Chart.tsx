@@ -48,6 +48,11 @@ export function MarketingAndSeoChart() {
       enabled: false,
     },
     colors: ["#95A4FC", "#BAEDBD", "#1C1C1C", "#B1E3FF", "#A8C5DA", "#A1E3CB"],
+    states: {
+      hover: {
+        filter: { type: "darken" },
+      },
+    },
     xaxis: {
       categories: [
         "Jan",

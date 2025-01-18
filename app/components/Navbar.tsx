@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "@/app/icons/Logo";
 import NavItem from "@/app/components/bits/NavItem";
 import { NavDataInterface } from "@/app/types/NavDataTypes";
-import { NavData, NavData2 } from "@/app/libs/NavData";
+import { NavData, NavData2, NavData3, NavData4 } from "@/app/libs/NavData";
 
 function Navbar() {
   return (
@@ -17,6 +17,16 @@ function Navbar() {
       </div>
       <div className="mt-4 px-4 pb-4 border-b border-[#F0ECEC]">
         {NavData2.map((item: NavDataInterface) => {
+          return <NavItem {...item} />;
+        })}
+      </div>
+      <div className="mt-4 px-4 pb-4 border-b border-[#F0ECEC]">
+        {NavData3.map((item: NavDataInterface) => {
+          return <NavItem {...item} />;
+        })}
+      </div>
+      <div className="mt-4 px-4 pb-4">
+        {NavData4.map((item: NavDataInterface) => {
           return <NavItem {...item} />;
         })}
       </div>
