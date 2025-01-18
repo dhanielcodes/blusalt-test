@@ -3,8 +3,6 @@ import Navbar from "@/app/components/Navbar";
 import NavbarMobile from "@/app/components/NavbarMobile";
 import TopBar from "@/app/components/TopBar";
 import NotificationsTab from "@/app/components/NotificationsTab";
-import { useContext } from "react";
-import DashboardContext from "@/app/context/dashboard.context";
 import useScreenSize from "@/app/libs/useScreenSize";
 
 export default function DashboardLayout({
@@ -12,21 +10,16 @@ export default function DashboardLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { navState }: any = useContext(DashboardContext);
   const { width } = useScreenSize();
   return (
     <div
       style={{
         width: `${width}px`,
       }}
-      className={`max-w-[1440px] mx-auto grid ${
-        navState === "web"
-          ? "md:grid-cols-[240px_1fr] grid-cols-[100px_1fr]"
-          : "grid-cols-[100px_1fr]"
-      } antialiased font-inter`}
+      className={`max-w-[1440px] mx-auto grid md:grid-cols-[240px_1fr] grid-cols-[100px_1fr] antialiased font-inter`}
     >
       <div className="w-full hidden md:block">
-        {navState === "web" ? <Navbar /> : <NavbarMobile />}
+        <Navbar />
       </div>
       <div className="w-full block md:hidden">
         <NavbarMobile />
