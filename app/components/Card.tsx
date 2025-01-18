@@ -36,6 +36,7 @@ function Card({
               transitions={(index) => ({
                 type: "spring",
                 duration: index + 0.3,
+                delay: 1,
               })}
               animateToNumber={count}
               fontStyle={{

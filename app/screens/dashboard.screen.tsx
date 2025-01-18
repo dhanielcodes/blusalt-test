@@ -7,14 +7,29 @@ import Card from "@/app/components/Card";
 import DashboardLayout from "@/app/layouts/DashboardLayout";
 import Image from "next/image";
 import useScreenSize from "@/app/libs/useScreenSize";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function DashboardScreen() {
   const { width } = useScreenSize();
   const sWidth = (width * 2) / 2.8;
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
     <DashboardLayout>
-      <div className="grid gap-4 w-full">
+      <motion.div
+        animate={{
+          opacity: loading ? 0 : 1,
+          transform: loading ? "translateY(10%)" : "translateY(0%)",
+          type: "spring",
+        }}
+        className="grid gap-4 w-full"
+      >
         <div
           style={{
             width: width < 1024 ? sWidth + "px" : "100%",
@@ -55,7 +70,7 @@ export default function DashboardScreen() {
           </div>
         </div>
         <MarketingAndSeoChart />
-      </div>
+      </motion.div>
     </DashboardLayout>
   );
 }
