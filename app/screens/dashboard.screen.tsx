@@ -8,7 +8,7 @@ import DashboardLayout from "@/app/layouts/DashboardLayout";
 import Image from "next/image";
 import useScreenSize from "@/app/libs/useScreenSize";
 
-export default function Dashboard() {
+export default function DashboardScreen() {
   const { width } = useScreenSize();
   const sWidth = (width * 2) / 2.8;
 

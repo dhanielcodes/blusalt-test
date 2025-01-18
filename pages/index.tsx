@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Dashboard from "./dashboard";
+import DashboardScreen from "@/app/screens/dashboard.screen";
 
 export default function Home() {
-  return <Dashboard />;
+  return <DashboardScreen />;
 }
