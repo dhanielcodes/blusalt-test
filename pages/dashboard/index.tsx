@@ -11,7 +11,7 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <div className="grid gap-4">
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
           <Card count={7265} title="Requests" spike="up" spikePercentage={20} />
           <Card
             count={3671}
@@ -29,7 +29,7 @@ export default function Dashboard() {
             spikePercentage={-4}
           />
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 gap-4">
           <div className="col-span-3">
             <TotalUsersChart />
           </div>
@@ -37,7 +37,7 @@ export default function Dashboard() {
             <TrafficByWebsiteChart />
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-4 gap-4">
           <div className="col-span-2">
             <ReportsGeneratedChart />
           </div>

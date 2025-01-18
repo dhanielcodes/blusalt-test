@@ -43,7 +43,7 @@ export function TrafficByLocationChart() {
   return (
     <div className="bg-[#F7F9FB] rounded-[20px] p-5 h-full">
       <CharTitle title="Traffic by Location" />
-      <div className="grid grid-cols-2 h-full">
+      <div className="grid md:grid-cols-2 h-full">
         <div className="grid place-items-center">
           <Doughnut
             data={data}

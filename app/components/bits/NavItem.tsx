@@ -4,6 +4,7 @@ export default function NavItem({
   name = "Overview",
   onClick,
   icon,
+  showName = true,
 }: NavItemProps) {
   return (
     <>
@@ -17,9 +18,11 @@ export default function NavItem({
       >
         <div className="flex items-center gap-2">
           {icon}
-          <div className="text-black font-light text-base font-ibm-plex-sans">
-            {name}
-          </div>
+          {showName && (
+            <div className="text-black font-light text-base font-ibm-plex-sans">
+              {name}
+            </div>
+          )}
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Logo(props: React.SVGProps<SVGSVGElement>) {
+function LogoMain(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -26,4 +26,4 @@ function Logo(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export default Logo;
+export default LogoMain;

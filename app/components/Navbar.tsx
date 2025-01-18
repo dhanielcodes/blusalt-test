@@ -11,23 +11,23 @@ function Navbar() {
         <Logo />
       </div>
       <div className="mt-10 px-4 pb-4 border-b border-[#F0ECEC]">
-        {NavData.map((item: NavDataInterface) => {
-          return <NavItem {...item} />;
+        {NavData.map((item: NavDataInterface, index: number) => {
+          return <NavItem key={index} {...item} />;
         })}
       </div>
       <div className="mt-4 px-4 pb-4 border-b border-[#F0ECEC]">
-        {NavData2.map((item: NavDataInterface) => {
-          return <NavItem {...item} />;
+        {NavData2.map((item: NavDataInterface, index: number) => {
+          return <NavItem key={index} {...item} />;
         })}
       </div>
       <div className="mt-4 px-4 pb-4 border-b border-[#F0ECEC]">
-        {NavData3.map((item: NavDataInterface) => {
-          return <NavItem {...item} />;
+        {NavData3.map((item: NavDataInterface, index: number) => {
+          return <NavItem key={index} {...item} />;
         })}
       </div>
       <div className="mt-4 px-4 pb-4">
-        {NavData4.map((item: NavDataInterface) => {
-          return <NavItem {...item} />;
+        {NavData4.map((item: NavDataInterface, index: number) => {
+          return <NavItem key={index} {...item} />;
         })}
       </div>
     </div>
