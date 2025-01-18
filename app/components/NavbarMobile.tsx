@@ -6,7 +6,7 @@ import LogoMain from "@/app/icons/LogoMain";
 
 function NavbarMobile() {
   return (
-    <div className="p-6 border-r border-[#F0ECEC] h-screen">
+    <div className="p-6 border-r border-[#F0ECEC] h-screen overflow-hidden overflow-y-scroll">
       <div className="w-full flex items-center justify-center">
         <LogoMain />
       </div>

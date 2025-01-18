@@ -6,7 +6,7 @@ import { NavData, NavData2, NavData3, NavData4 } from "@/app/libs/NavData";
 
 function Navbar() {
   return (
-    <div className="p-6  border-r border-[#F0ECEC] h-screen">
+    <div className="p-6  border-r border-[#F0ECEC] h-screen overflow-hidden overflow-y-scroll">
       <div className="w-full">
         <Logo />
       </div>
